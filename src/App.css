@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+}
+.list {
+  padding: 0 30px;
+  width: 400px;
+  list-style: none;
+}
+.post {
+  cursor: pointer;
+  height: 40px;
+  padding: 0 5px;
+  border: 1px solid rgb(192, 192, 192);
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+}
+.post p {
+  margin: 0;
+}
+.pagination {
+  width: 400px;
+  padding: 20px 30px;
+  list-style: none;
+  display: flex;
+}
+.page-item {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(192, 192, 192);
+  align-items: center;
+}
+.page-link {
+  color: rgb(192, 192, 192);
+  margin: 0 auto;
+  text-decoration: none;
+}
+.active {
+  color: black;
+}
+.activeQuote {
+  background-color: rgb(196, 247, 200);
+}
+/* Description ------------------------------------ */
+.postTitle {
+  text-transform: capitalize;
+}
+.postBody {
+  font-style: italic;
+}
+/* button --------------------------------- */
+.favorites {
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: rgb(196, 247, 200);
+  padding: 5px;
+}
