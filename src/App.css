@@ -2,6 +2,7 @@
   display: flex;
 }
 .list {
+  margin: 0;
   padding: 0 30px;
   width: 400px;
   list-style: none;
@@ -50,9 +51,18 @@
   font-style: italic;
 }
 /* button --------------------------------- */
-.favorites {
+.buttonSection {
+  display: flex;
+  justify-content: space-evenly;
+}
+.button {
   border: 1px solid grey;
   border-radius: 5px;
-  background-color: rgb(196, 247, 200);
   padding: 5px;
+}
+.favorites {
+  background-color: rgb(196, 247, 200);
+}
+.remove_favorites {
+  background-color: rgb(255, 227, 233);
 }
