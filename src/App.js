@@ -4,12 +4,13 @@ import "./App.css";
 import Posts from "./components/Posts";
 import Pagination from "./components/Pagination";
 import Description from "./components/Description";
+import Favorites from "./components/Favorites";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
-  const [currentPost, setCurrentPosts] = useState([]);
+  const [activeQuote, setActiveQuote] = useState();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -28,14 +29,19 @@ const App = () => {
   return (
     <div className="container">
       <div>
-        <Posts posts={currentPosts} setCurrentPosts={setCurrentPosts} />
+        <Posts
+          posts={currentPosts}
+          activeQuote={activeQuote}
+          setActiveQuote={setActiveQuote}
+        />
         <Pagination
           postsPerPage={postsPerPage}
           totalPosts={posts.length}
           paginate={paginate}
         />
       </div>
-      <Description currentPost={currentPost} />
+      <Description />
+      <Favorites activeQuote={activeQuote} setActiveQuote={setActiveQuote} />
     </div>
   );
 };

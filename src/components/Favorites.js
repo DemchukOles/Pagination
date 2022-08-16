@@ -1,17 +1,19 @@
 import React from "react";
-// import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-const Posts = ({ posts, activeQuote, setActiveQuote }) => {
+const Favorites = ({ activeQuote, setActiveQuote }) => {
+  const favoritesQouotes = useSelector(
+    (state) => state.favoritesQouotes.favoritesQouotes
+  );
+
   const dispatch = useDispatch();
-
   const addCurrentQuote = (post) => {
     dispatch({ type: "ADD_CURRENT_QUOTE", payload: post });
   };
   return (
     <ul className="list">
-      <h1>Quote List</h1>
-      {posts.map((post) => (
+      <h1>Favorites Quotes</h1>
+      {favoritesQouotes.map((post) => (
         <li
           className={activeQuote === post ? "post activeQuote" : "post"}
           key={post.id}
@@ -26,5 +28,4 @@ const Posts = ({ posts, activeQuote, setActiveQuote }) => {
     </ul>
   );
 };
-
-export default Posts;
+export default Favorites;
