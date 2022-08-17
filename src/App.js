@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
-import Posts from "./components/Posts";
+import Quotes from "./components/Quotes";
 import Pagination from "./components/Pagination";
 import Description from "./components/Description";
 import Favorites from "./components/Favorites";
@@ -29,12 +29,13 @@ const App = () => {
   return (
     <div className="container">
       <div>
-        <Posts
-          posts={currentPosts}
+        <Quotes
+          quotes={currentPosts}
           activeQuote={activeQuote}
           setActiveQuote={setActiveQuote}
         />
         <Pagination
+          currentPage={currentPage}
           postsPerPage={postsPerPage}
           totalPosts={posts.length}
           paginate={paginate}

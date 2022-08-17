@@ -20,8 +20,10 @@
   margin: 0;
 }
 .pagination {
+  margin: 0;
+  cursor: pointer;
   width: 400px;
-  padding: 20px 30px;
+  padding: 0 30px;
   list-style: none;
   display: flex;
 }
@@ -55,9 +57,9 @@
   display: flex;
   justify-content: space-evenly;
 }
-.button {
+.button_desc {
   border: 1px solid grey;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 5px;
 }
 .favorites {
@@ -65,4 +67,18 @@
 }
 .remove_favorites {
   background-color: rgb(255, 227, 233);
+}
+/* button pagination--------------------------------- */
+.pagination_button {
+  cursor: pointer;
+  margin-right: 5px;
+  width: 26px;
+  padding: 5px;
+  border: 1px solid rgb(155, 154, 154);
+  border-radius: 20px;
+  display: inline-flex;
+  justify-content: center;
+}
+.paginationSettings {
+  padding: 20px 30px;
 }
