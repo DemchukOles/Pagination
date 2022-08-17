@@ -9,7 +9,7 @@ import Favorites from "./components/Favorites";
 const App = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [quotesPerPage, setQuotesPerPage] = useState(10);
   const [activeQuote, setActiveQuote] = useState();
 
   useEffect(() => {
@@ -20,8 +20,8 @@ const App = () => {
 
     fetchPosts();
   }, []);
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const indexOfLastPost = currentPage * quotesPerPage;
+  const indexOfFirstPost = indexOfLastPost - quotesPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -36,7 +36,8 @@ const App = () => {
         />
         <Pagination
           currentPage={currentPage}
-          postsPerPage={postsPerPage}
+          quotesPerPage={quotesPerPage}
+          setQuotesPerPage={setQuotesPerPage}
           totalPosts={posts.length}
           paginate={paginate}
         />

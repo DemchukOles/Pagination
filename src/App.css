@@ -26,6 +26,7 @@
   padding: 0 30px;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
 }
 .page-item {
   display: flex;
@@ -81,4 +82,12 @@
 }
 .paginationSettings {
   padding: 20px 30px;
+}
+/* pagination dropdown----------------------- */
+.paginationDropdown {
+  display: inline;
+  padding: 20px;
+}
+.paginationDropdown label {
+  padding-right: 5px;
 }
