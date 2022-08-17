@@ -29,7 +29,7 @@ const Description = () => {
       <div className="buttonSection">
         {title && !favoritesQouotes.includes(currentQuote) && (
           <button
-            className="favorites button"
+            className="favorites button_desc"
             onClick={() => {
               addFavoritesQuotes();
             }}
@@ -38,7 +38,10 @@ const Description = () => {
           </button>
         )}
         {favoritesQouotes.includes(currentQuote) && (
-          <button className="remove_favorites button" onClick={removeFavorites}>
+          <button
+            className="remove_favorites button_desc"
+            onClick={removeFavorites}
+          >
             remove from favorites
           </button>
         )}
