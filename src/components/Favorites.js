@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const Favorites = ({ activeQuote, setActiveQuote }) => {
+  console.log("activeQuote:", activeQuote);
   const favoritesQouotes = useSelector(
     (state) => state.favoritesQouotes.favoritesQouotes
   );
