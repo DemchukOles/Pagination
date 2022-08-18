@@ -9,17 +9,25 @@ const Pagination = ({
 }) => {
   const pageNumbers = [];
   const lastPage = Math.ceil(totalPosts / quotesPerPage);
-  // for (let i = 1; i <= lastPage; i++) {
-  //   pageNumbers.push(i);
-  // }
   const handleChange = (event) => {
     setQuotesPerPage(event.target.value);
   };
-  //
+
   function createPages(pageNumbers, totalPosts, currentPage) {
+    // for (let i = 1; i <= lastPage; i++) {
+    //   pageNumbers.push(i);
+    // }
+    const paginationStart = 9 - (lastPage - currentPage);
     if (totalPosts > 10) {
       if (currentPage > 5) {
-        for (let i = currentPage - 4; i <= currentPage + 5; i++) {
+        for (
+          let i =
+            lastPage - currentPage < 5
+              ? currentPage - paginationStart
+              : currentPage - 4;
+          i <= (lastPage - 4 > currentPage ? currentPage + 5 : lastPage);
+          i++
+        ) {
           pageNumbers.push(i);
           if (i === totalPosts) break;
         }
@@ -36,7 +44,6 @@ const Pagination = ({
     }
   }
   createPages(pageNumbers, totalPosts, currentPage);
-  //
   return (
     <div>
       <div className="paginationSettings">

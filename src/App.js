@@ -5,6 +5,7 @@ import Quotes from "./components/Quotes";
 import Pagination from "./components/Pagination";
 import Description from "./components/Description";
 import Favorites from "./components/Favorites";
+import InfiniteScroll from "./components/InfiniteScroll";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -41,6 +42,7 @@ const App = () => {
           totalPosts={posts.length}
           paginate={paginate}
         />
+        <InfiniteScroll />
       </div>
       <Description />
       <Favorites activeQuote={activeQuote} setActiveQuote={setActiveQuote} />

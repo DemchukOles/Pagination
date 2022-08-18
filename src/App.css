@@ -3,9 +3,10 @@
 }
 .list {
   margin: 0;
-  padding: 0 30px;
+  margin-left: 30px;
   width: 400px;
   list-style: none;
+  padding: 0;
 }
 .post {
   cursor: pointer;
@@ -23,7 +24,7 @@
   margin: 0;
   cursor: pointer;
   width: 400px;
-  padding: 0 30px;
+
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -90,4 +91,30 @@
 }
 .paginationDropdown label {
   padding-right: 5px;
+}
+/* InfiniteScroll-------------------------- */
+.listInfinite {
+  width: 400px;
+  height: 300px;
+  overflow: scroll;
+  padding: 0;
+  margin-left: 30px;
+  border: 1px solid rgb(199, 199, 199);
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+.listInfinite::-webkit-scrollbar {
+  width: 10px;
+}
+.listInfinite::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.listInfinite::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.listInfinite::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.title {
+  padding-left: 30px;
 }
