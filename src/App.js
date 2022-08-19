@@ -7,16 +7,32 @@ import "./App.css";
 
 const App = () => {
   const [activeQuote, setActiveQuote] = useState();
-
+  const [pagination, setPagination] = useState(true);
+  const paginationHandler = () => {
+    setPagination(!pagination);
+  };
   return (
     <div className="container">
       <div>
         <h1 className="title">Quote List</h1>
-        <Quotes activeQuote={activeQuote} setActiveQuote={setActiveQuote} />
-        <InfiniteScroll
-          activeQuote={activeQuote}
-          setActiveQuote={setActiveQuote}
-        />
+        {pagination ? (
+          <div>
+            <button className="paginationButton" onClick={paginationHandler}>
+              infinite scroll
+            </button>
+            <Quotes activeQuote={activeQuote} setActiveQuote={setActiveQuote} />
+          </div>
+        ) : (
+          <div>
+            <button className="paginationButton" onClick={paginationHandler}>
+              pagination
+            </button>
+            <InfiniteScroll
+              activeQuote={activeQuote}
+              setActiveQuote={setActiveQuote}
+            />
+          </div>
+        )}
       </div>
       <Description />
       <Favorites activeQuote={activeQuote} setActiveQuote={setActiveQuote} />
