@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Description = () => {
   const currentQuote = useSelector((state) => state.currentQuote.currentQuote);
+  console.log("currentQuote:", currentQuote);
   const { title, body } = currentQuote;
 
   const dispatch = useDispatch();

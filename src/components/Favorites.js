@@ -11,7 +11,7 @@ const Favorites = ({ activeQuote, setActiveQuote }) => {
     dispatch({ type: "ADD_CURRENT_QUOTE", payload: post });
   };
   return (
-    <ul className="list">
+    <div className="list">
       <h1>Favorites Quotes</h1>
       {favoritesQouotes.map((post) => (
         <li
@@ -25,7 +25,7 @@ const Favorites = ({ activeQuote, setActiveQuote }) => {
           <p>{post.title}</p>
         </li>
       ))}
-    </ul>
+    </div>
   );
 };
 export default Favorites;
